@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="../static/css/sample.css">
   </head>
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">HelloFlask</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><p class="navbar-text">Signed in as: <a href="#" class="navbar-link" id="username">{{ session.username }}</a></p></li>
+          <li><a href="/logout" id="logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-12">
