@@ -15,6 +15,9 @@ app.config['SECRET_KEY'] = os.urandom(24)
 # 各route関数の前に実行される処理
 @app.before_request
 def before_request():
+    # 静的リソースへのアクセスについてはチェックしない
+    if request.path.startswith('/static/'):
+        return
     # セッションにusernameが保存されている．つまりログイン済み
     if session.get('username') is not None:
         return
